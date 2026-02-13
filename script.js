@@ -50,6 +50,7 @@ class ClickGame {
         this.render();
         this.saveGame();
         this.flashDollarSign();
+        document.getElementById('barkAudio').play();
     }
     
     flashDollarSign() {
