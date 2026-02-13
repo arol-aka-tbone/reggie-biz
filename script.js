@@ -33,6 +33,7 @@ class ClickGame {
     
     reset() {
         this.money = 0;
+        this.clicks = 0;
         this.clickValue = 1;
         this.upgrades = [
             { name: 'Better Clicks', cost: 10, multiplier: 1.2 },
