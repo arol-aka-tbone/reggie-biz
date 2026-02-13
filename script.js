@@ -33,6 +33,12 @@ class ClickGame {
     
     reset() {
         this.money = 0;
+        this.clickValue = 1;
+        this.upgrades = [
+            { name: 'Better Clicks', cost: 10, multiplier: 1.2 },
+            { name: 'Auto Clicker', cost: 50, multiplier: 1.5 },
+            { name: 'Click Machine', cost: 200, multiplier: 2 },
+        ];
         this.render();
         this.saveGame();
         this.flashDollarSign();
