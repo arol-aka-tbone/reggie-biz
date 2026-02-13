@@ -23,6 +23,7 @@ class ClickGame {
     setupEventListeners() {
         document.getElementById('clickButton').addEventListener('click', () => this.click());
         document.getElementById('resetButton').addEventListener('click', () => this.reset());
+        document.getElementById('stopMusicButton').addEventListener('click', () => this.stopMusic());
     }
     
     click() {
@@ -60,6 +61,11 @@ class ClickGame {
         setTimeout(() => {
             dollar.remove();
         }, 600);
+    }
+    
+    stopMusic() {
+        document.getElementById('gameAudio').pause();
+        this.audioStarted = false;
     }
     
     buyUpgrade(index) {
