@@ -3,6 +3,7 @@ class ClickGame {
         this.money = 0;
         this.clicks = 0;
         this.clickValue = 1;
+        this.audioStarted = false;
         
         this.upgrades = [
             { name: 'Better Clicks', cost: 10, multiplier: 1.2 },
@@ -25,6 +26,10 @@ class ClickGame {
     }
     
     click() {
+        if (!this.audioStarted) {
+            document.getElementById('gameAudio').play();
+            this.audioStarted = true;
+        }
         this.money += this.clickValue;
         this.clicks += 1;
         this.render();
@@ -35,6 +40,7 @@ class ClickGame {
         this.money = 0;
         this.clicks = 0;
         this.clickValue = 1;
+        this.audioStarted = false;
         this.upgrades = [
             { name: 'Better Clicks', cost: 10, multiplier: 1.2 },
             { name: 'Auto Clicker', cost: 50, multiplier: 1.5 },
