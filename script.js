@@ -21,6 +21,7 @@ class ClickGame {
     
     setupEventListeners() {
         document.getElementById('clickButton').addEventListener('click', () => this.click());
+        document.getElementById('resetButton').addEventListener('click', () => this.reset());
     }
     
     click() {
@@ -28,6 +29,24 @@ class ClickGame {
         this.clicks += 1;
         this.render();
         this.saveGame();
+    }
+    
+    reset() {
+        this.money = 0;
+        this.render();
+        this.saveGame();
+        this.flashDollarSign();
+    }
+    
+    flashDollarSign() {
+        const dollar = document.createElement('div');
+        dollar.className = 'flash-dollar';
+        dollar.textContent = '💲';
+        document.body.appendChild(dollar);
+        
+        setTimeout(() => {
+            dollar.remove();
+        }, 600);
     }
     
     buyUpgrade(index) {
